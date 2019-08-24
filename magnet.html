@@ -96,7 +96,7 @@
                     // renderer.setSize(window.innerWidth, window.innerHeight);
                 }, false);
 
-                document.addEventListener('mousedown', () => document.documentElement.requestFullscreen());
+                // document.addEventListener('mousedown', () => document.documentElement.requestFullscreen());
                 document.addEventListener('fullscreenchange', () => {
                     if (document.fullscreenElement != null) {
                         screen.orientation.lock("natural")
