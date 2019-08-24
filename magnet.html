@@ -110,6 +110,7 @@
                 sensor = relative ? new RelativeOrientationSensor(options) : new AbsoluteOrientationSensor(options);
                 sensor.onreading = () => { 
                     model.quaternion.fromArray(sensor.quaternion).inverse();
+                    // brada
                     console.log(sensor.quaternion)
                 }
                 sensor.onerror = (event) => {
