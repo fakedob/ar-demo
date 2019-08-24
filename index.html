@@ -50,6 +50,10 @@
 </head>
 
 <body>
+    <!-- <video preload="auto" autoplay="autoplay" id="vid1" muted onerror="failed(event)" loop="true" crossorigin webkit-playsinline playsinline>
+         <source  type="video/mp4"  src="video.mp4">
+        <h3>Error : Your browser does not support.</h3>
+     </video> -->
   <div class="header">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-left">
@@ -64,14 +68,11 @@
   </div>
   <a-scene embedded artoolkit='sourceType: webcam; detectionMode: mono; maxDetectionRate: 30; canvasWidth: 250; canvasHeight: 250'>
     <a-assets>
-      <video preload="auto" id="vid" onerror="failed(event)" loop="true" crossorigin webkit-playsinline playsinline controls>
-               <!-- <source  type="video/webm"  src="https://isl-web-res.s3.ap-south-1.amazonaws.com/augment/ar_assets/alpha_video/aplha_video_transpirant_bg.webm"> -->
-               <!-- <source  type="video/webm"  src="../ar_assets/video/aplha_video_transpirant_bg.webm"> -->
-                <source  type="video/mp4"  src="video.mp4">
+      <video preload="auto" autoplay="autoplay" muted id="vid" onerror="failed(event)" loop="true" crossorigin webkit-playsinline playsinline>
+              <source  type="video/mp4"  src="video.mp4">
                <h3>Error : Your browser does not support.</h3>
             </video>
     </a-assets>
-    <!-- <a-marker id="memarker" type="pattern" url="https://isl-web-res.s3.amazonaws.com/augment/ar_patterns/mono_patterns/pattern-marker.patt" vidhandler> -->
     <a-marker crossorigin="anonymous" id="memarker" type="pattern" url="pattern-marker.patt" vidhandler>
       <a-plane position='0 0.1 0' scale="2 2 2" rotation="-90 0 0" material='transparent:true;alphaTest:0;src:#vid'></a-plane>
     </a-marker>
@@ -179,6 +180,9 @@
     
     .a-enter-vr-button {
       display: none !important;
+    }
+    video::-webkit-media-controls {
+      display: none;
     }
   </style>
 </body>
